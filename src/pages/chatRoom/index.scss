@@ -1,0 +1,46 @@
+.item {
+  padding: 20px !important;
+}
+.active {
+  background-color: #f5f5f5;
+}
+.active:hover {
+  background-color: #f5f5f5;
+}
+.content {
+  background-color: #fff;
+  border-radius: 40px;
+}
+.chatList {
+  padding: 50px;
+  height: 380px;
+  box-sizing: border-box;
+}
+.right {
+  justify-content: end;
+  flex-direction: row-reverse;
+  .msg {
+    margin-right: 8px;
+  }
+}
+.messageBox {
+  display: flex;
+  margin: 10px;
+  .msg {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 8px;
+    max-width: 300px;
+  }
+}
+.inputBox {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  text-align: right;
+  button {
+    margin-top: 20px;
+  }
+}

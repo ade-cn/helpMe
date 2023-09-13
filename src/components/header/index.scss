@@ -1,0 +1,33 @@
+.M-header {
+  position: relative;
+  z-index: 999;
+  border-radius: 0;
+  overflow: hidden;
+  .ant-card-body {
+    padding: 16px 10%;
+    height: 62px;
+    line-height: 32px;
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      .logo-con {
+        display: flex;
+        font-size: 30px;
+        font-weight: bold;
+        background-image:-webkit-linear-gradient(right, red, blue);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+      }
+      .menu-con {
+        margin-left: 20px;
+        width: 300px;
+      }
+      .opt-con {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+    }
+  }
+}
