@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Row,Col,FloatButton } from 'antd'
+import {Row,Col,FloatButton ,Tooltip  } from 'antd'
 import GoodItem from "../../components/goodItem";
-import { QuestionCircleOutlined, SyncOutlined } from '@ant-design/icons';
+import { PlusOutlined, SyncOutlined} from '@ant-design/icons';
 import Macy from 'macy'
-
+import {useNavigate} from "react-router-dom"
 import "./index.scss"
 const dataImages = [
   "https://picsum.photos/640/200/?random",
@@ -21,6 +21,7 @@ function GoodUItem(props) {
   const [data, setData] = useState(dataImages)
   const [masonry, setMasonry] = useState(null);
   const [columns, setColumns] = useState(4);
+  const  navigate = useNavigate()
   const getMacy =()=>{
     if (masonry) {
       //当数据更新时，会重新计算并排版
@@ -47,8 +48,8 @@ function GoodUItem(props) {
       <Row gutter={[0, 0]} className="macy-container">
         {
           [..."1231231233"].map((v,index)=>{
-            return  <Col key={v} align="center" className="gutter-row " >
-                <GoodItem nav={()=>navigate('/login')} index={index}></GoodItem>
+            return  <Col key={index} align="center" className="gutter-row " >
+                <GoodItem index={index}></GoodItem>
               </Col>
           })
         }
@@ -56,9 +57,11 @@ function GoodUItem(props) {
       <FloatButton.Group
         shape="circle"
       >
-        <FloatButton icon={<QuestionCircleOutlined />} />
+        <Tooltip placement="top" title="发布求救">
+          <FloatButton onClick={()=>navigate("/addHelp")} icon={<PlusOutlined />} />
+        </Tooltip>
         <FloatButton icon={<SyncOutlined />} />
-        <FloatButton.BackTop visibilityHeight={0} />
+        <FloatButton.BackTop visibilityHeight={500} />
       </FloatButton.Group>
     </div>
   );

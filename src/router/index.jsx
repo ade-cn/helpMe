@@ -6,6 +6,7 @@ import Account from "../pages/chatRoom";
 import Entry from "../pages/entry";
 import {globalConfig} from '../globalConfig'
 import Detail from "../pages/detail";
+import AddHelp from "../pages/addHelp";
 
 export const globalRouters = createHashRouter([
   {
@@ -15,20 +16,20 @@ export const globalRouters = createHashRouter([
   {
     path: '/',
     element: <Entry/>,
-    // 定义entry二级路由
     children: [
       {
-        // 精确匹配"/home"，跳转Home页面
         path: '/home',
         element: <Home/>,
       },
       {
-        // 精确匹配"/home"，跳转Home页面
         path: '/detail',
         element: <Detail/>,
       },
       {
-        // 精确匹配"/chatRoom"，跳转Account页面
+        path: '/addHelp',
+        element: <AddHelp/>,
+      },
+      {
         path: '/chatRoom',
         element: <Account/>,
       },
