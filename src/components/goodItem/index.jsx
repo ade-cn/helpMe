@@ -61,7 +61,7 @@ function GoodItem(props) {
         <Meta
           onClick={()=>navigate("/detail")}
           title="救救我救救我救救我救救我"
-          description={<>报酬：13元 <br/> 期待完成时间：10月12日</>}
+          description={<>报酬：13元 <br/> 截止：10月12日</>}
         />
         <Space style={{marginTop:13}} size={[0, 4]} wrap>
           <Tag color="#f50">#f50</Tag>

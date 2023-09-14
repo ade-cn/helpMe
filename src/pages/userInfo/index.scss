@@ -1,0 +1,30 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+  }
+  b {
+    line-height: 4;
+  }
+  p {
+    text-align: left;
+    color: #666;
+  }
+  .btn {
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+  }
+}

@@ -7,11 +7,17 @@ import Entry from "../pages/entry";
 import {globalConfig} from '../globalConfig'
 import Detail from "../pages/detail";
 import AddHelp from "../pages/addHelp";
+import Register from "../pages/register";
+import UserInfo from "../pages/userInfo";
 
 export const globalRouters = createHashRouter([
   {
     path: '/login',
     element: <Login/>
+  },
+  {
+    path: '/register',
+    element: <Register/>
   },
   {
     path: '/',
@@ -32,6 +38,10 @@ export const globalRouters = createHashRouter([
       {
         path: '/chatRoom',
         element: <Account/>,
+      },
+      {
+        path: '/userInfo',
+        element: <UserInfo/>,
       },
       {
         // 如果URL没有"#路由"，跳转Home页面

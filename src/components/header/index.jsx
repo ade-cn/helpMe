@@ -1,4 +1,4 @@
-import {Button, Card, Menu} from "antd";
+import {Button, Card, Menu, Avatar,Dropdown} from "antd";
 import {MoonOutlined, ThemeOutlined, SunOutlined} from "../extraIcons";
 import React, {useState} from "react";
 import {useNavigate, useLocation} from "react-router-dom"
@@ -34,6 +34,16 @@ function Header(props) {
   const dispatch = useDispatch()
   const theme = useSelector((state => state.theme))
   const [showThemeModal, setShowThemeModal] = useState(false)
+  const items = [
+    {
+      key: '1',
+      label: (
+        <a  rel="noopener noreferrer" href="/#/userInfo">
+          个人资料
+        </a>
+      ),
+    }
+  ];
   return (
     <Card className="M-header">
       <div className="header-wrapper">
@@ -73,6 +83,24 @@ function Header(props) {
               ></Button>
             )
           }
+          <Button type="primary" onClick={()=>navigate("/login")} shape="circle">
+            登
+          </Button>
+          <Button type="primary" onClick={()=>navigate("/register")} ghost shape="circle">
+            注
+          </Button>
+
+          <Dropdown
+            menu={{
+              items,
+            }}
+            placement="bottom"
+            arrow
+          >
+            <Avatar
+              src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+            />
+          </Dropdown>
         </div>
       </div>
       {
